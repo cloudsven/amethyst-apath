@@ -239,6 +239,7 @@ public final class RecipeManager {
                 'A', ItemFactory.create(CustomItem.AMIRITE_SHARD),
                 'H', ItemFactory.create(CustomItem.SCARLET_HEART_CHARGED),
                 'M', Material.MACE,
+                'N', Material.NETHERITE_INGOT,
                 'B', Material.BLAZE_ROD
         );
     }
