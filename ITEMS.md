@@ -50,7 +50,7 @@ Crafting recipe:
 ![amirite cleaver recipe](/assets/amirite_cleaver_recipe.png "amirite cleaver recipe")
 
 ### ![scarlet heart](/assets/scarlet_heart.png "scarlet heart") Scarlet Heart
-Found in a structure called the [Amethyst Chasm](ITEMS.md#scarlet-mace).
+Found in a structure called the [Amethyst Chasm](STRUCTURES.md#amethyst-chasm).
 It is used to craft the [Charged Scarlet Heart](ITEMS.md#-charged-scarlet-heart).
 
 ### ![charged scarlet heart](/assets/scarlet_heart_charged.png "charged scarlet heart") Charged Scarlet Heart
