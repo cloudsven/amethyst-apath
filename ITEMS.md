@@ -21,7 +21,7 @@ Crafting recipe:
 Reduces damage taken by 25% when holding it and reflects 10% of damage when blocking.
 
 **Abilities:**
-- [KNOCK 'EM] On right click, you can knock all nearby mobs back a few blocks.
+- [KNOCK 'EM] On right click, all nearby players/mobs are knocked back and 1 heart of true damage is dealt to them.
   (10s cooldown)
 
 Crafting recipe:
@@ -41,6 +41,7 @@ Crafting recipe:
 
 ### ![amirite cleaver](/assets/amirite_cleaver.png "amirite cleaver") Amirite Cleaver
 Like a netherite axe, but deals 8 hearts of damage with an additional 1 heart of true damage. However the attack speed is very slow.
+It will also drop the head of whatever mob you killed. (if it has a head block)
 
 Crafting recipe:
 - 1 Blaze Rod
@@ -63,12 +64,13 @@ Crafting recipe:
 ![charged scarlet heart recipe](/assets/scarlet_heart_charged_recipe.png "charged scarlet heart recipe")
 
 ### Scarlet Blade
-Deals Wither II for 3 seconds, and damages the targets armor by 3% of it's max durability per hit. However, it also damages the users armor by 5% of it's max durability per hit.
+Like a normal Netherite Sword, but it damages the targets armor by 3% of it's max durability per hit. However, it also damages the users armor by 5% of it's max durability per hit.
 
 **Abilities:**
-- [LIFESTEAL] On left click, the user is healed by 10% of the damage dealt.
+- [SCARLET DRAIN] On swing, the target gets Wither II for 3 seconds.
+- [SCARLET SNATCH] On swing, the user is healed by 10% of the damage dealt.
 - [CRITICAL FIRE] On crit, the sword deals 8 seconds of fire to the target.
-- [FINISHER] On the target's death, the player is healed by how much health the target had before dying.
+- [GLORY KILL] On the target's death, the user is healed by how much health the target had before dying.
 
 Crafting recipe:
 - 1 Netherite Sword (enchants get transferred)
@@ -103,9 +105,11 @@ Crafting recipe:
 
 ### Scarlet Mace
 Like a normal mace, however it damages the targets armor by 5% of it's max durability.
-And that percentage can be increased with an enchant called [Rupture](ENCHANTMENTS.md#rupture-levels-1-4).
+And that percentage can be increased with an enchant called [Rupture.](ENCHANTMENTS.md#rupture-levels-1-4)
+However, the durability runs out very fast.
 
 **Abilities:**
+- [SCARLET DRAIN] On swing, the target gets Wither II for 3 seconds.
 - [SCARLET LAUNCH] On right click, the user is launched into the sky. (20s cooldown)
 
 Crafting recipe:

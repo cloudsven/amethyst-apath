@@ -42,7 +42,6 @@ public final class AmethystApath extends JavaPlugin {
                 new CleaverListener(this),
                 new MaceListener(this),
                 new CraftingListener(this),
-                new ShardedTntListener(this),
                 new ScarletBladeListener(this),
                 new ShieldListener(this),
                 new PickaxeListener(this),

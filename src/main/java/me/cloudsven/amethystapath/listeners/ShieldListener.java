@@ -4,10 +4,12 @@ import me.cloudsven.amethystapath.AmethystApath;
 import me.cloudsven.amethystapath.items.CustomItem;
 import me.cloudsven.amethystapath.items.ItemRegistry;
 import me.cloudsven.amethystapath.util.CooldownUtil;
+import me.cloudsven.amethystapath.util.DamageUtil;
 import org.bukkit.*;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -70,17 +72,21 @@ public class ShieldListener implements Listener {
     @EventHandler
     public void onPulse(PlayerInteractEvent event) {
         Player player = event.getPlayer();
+        Action action = event.getAction();
 
-        if (!player.isSneaking() || !player.isBlocking()) return;
+        if (action != Action.RIGHT_CLICK_AIR && action != Action.RIGHT_CLICK_BLOCK) return;
 
-        ItemStack shield = player.getInventory().getItemInOffHand();
+        // check if player is sneaking i.e. shifting
+        if (!player.isSneaking()) return;
+
+        ItemStack shield = event.getItem();
         if (!ItemRegistry.is(shield, item)) return;
 
         String abilityKey = "amirite_shield_knock";
 
         if (CooldownUtil.isOnCooldown(player.getUniqueId(), abilityKey)) {
-            long secondsLeft = CooldownUtil.getRemainingTime(player.getUniqueId(), abilityKey);
-            player.sendMessage(ChatColor.RED + "Wait " + secondsLeft + "s before using this again!");
+            String warningText = CooldownUtil.getFormattedRemainingTime(player.getUniqueId(), abilityKey);
+            player.sendMessage(ChatColor.RED + "Wait " + warningText + " before using this again!");
             return;
         }
 
@@ -92,13 +98,16 @@ public class ShieldListener implements Listener {
                 Vector knock = target.getLocation().toVector()
                         .subtract(player.getLocation().toVector())
                         .normalize()
-                        .multiply(1.5);
+                        .multiply(1.5)
+                        .setY(0.5); // add a small vertical lift
 
                 target.setVelocity(knock);
+                DamageUtil.applyTrueDamage(target, 2);
             }
         }
 
         player.sendMessage(ChatColor.GOLD + "You feel a burst of power from the Amirite Shield!");
+        player.getWorld().playSound(player.getLocation(), Sound.ENTITY_WIND_CHARGE_WIND_BURST, 1.0f, 1.0f);
 
         CooldownUtil.setCooldown(player.getUniqueId(), abilityKey, item.cooldown);
     }

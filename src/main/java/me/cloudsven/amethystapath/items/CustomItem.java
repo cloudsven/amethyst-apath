@@ -21,8 +21,8 @@ public enum CustomItem {
             "Totem of Amirite",
             NamedTextColor.LIGHT_PURPLE,
             List.of(
-                    TextUtil.text("Death's adversary."),
-                    TextUtil.text("• Explodes with true damage", NamedTextColor.DARK_PURPLE)
+                    TextUtil.text("This totem explodes with 2.5 hearts of true damage"),
+                    TextUtil.text("to any nearby player or mob.")
             )
     ),
 
@@ -32,9 +32,9 @@ public enum CustomItem {
             "Amirite Crossbow",
             NamedTextColor.LIGHT_PURPLE,
             List.of(
-                    TextUtil.text("A pillager's dream."),
-                    TextUtil.text("• Infuses arrows with amethyst", NamedTextColor.DARK_PURPLE),
-                    TextUtil.text("• Explodes on impact", NamedTextColor.DARK_PURPLE)
+                    TextUtil.empty(),
+                    TextUtil.text("This crossbow makes arrows explode"),
+                    TextUtil.text("with 2 hearts of true damage.")
             )
     ),
 
@@ -44,8 +44,9 @@ public enum CustomItem {
             "Amirite Cleaver",
             NamedTextColor.LIGHT_PURPLE,
             List.of(
-                    TextUtil.text("Wanna do some taxonomy?"),
-                    TextUtil.text("• Guarantees a head on kill", NamedTextColor.DARK_PURPLE)
+                    TextUtil.empty(),
+                    TextUtil.text("This axe guarantees a head on kill"),
+                    TextUtil.text("and deals 2 hearts of true damage.")
             ),
             null,
             16,
@@ -58,23 +59,14 @@ public enum CustomItem {
             "Amirite Shield",
             NamedTextColor.LIGHT_PURPLE,
             List.of(
-                    TextUtil.text("Captain America?"),
-                    TextUtil.text("• Reduces damage taken by 60%", NamedTextColor.DARK_PURPLE),
-                    TextUtil.text("• Reflects 25% of damage", NamedTextColor.DARK_PURPLE)
+                    TextUtil.empty(),
+                    TextUtil.text("This shield reduces damage taken by 25%"),
+                    TextUtil.text("and reflects 10% of damage."),
+                    TextUtil.empty(),
+                    TextUtil.text("Abilities:"),
+                    TextUtil.text("• Knock 'Em", NamedTextColor.GOLD)
             ),
             10
-    ),
-
-    SHARDED_TNT(
-            "sharded_tnt",
-            Material.TNT,
-            "Sharded TNT",
-            NamedTextColor.RED,
-            List.of(
-                    TextUtil.text("Highly unstable dynamite."),
-                    TextUtil.text("• Ignites immediately on placement", NamedTextColor.DARK_PURPLE),
-                    TextUtil.text("• 4x Explosion Power", NamedTextColor.DARK_PURPLE)
-            )
     ),
 
     SCARLET_HEART(
@@ -97,9 +89,15 @@ public enum CustomItem {
             "Scarlet Blade",
             NamedTextColor.RED,
             List.of(
-                    TextUtil.text("Kill! Kill! KILL!"),
-                    TextUtil.text("• 10% Lifesteal", NamedTextColor.DARK_RED),
-                    TextUtil.text("• Deals Wither II for 3 seconds", NamedTextColor.DARK_RED)
+                    TextUtil.empty(),
+                    TextUtil.text("This sword can give you life!"),
+                    TextUtil.text("But not your armor."),
+                    TextUtil.empty(),
+                    TextUtil.text("Abilities:"),
+                    TextUtil.text("• Scarlet Drain", NamedTextColor.DARK_RED),
+                    TextUtil.text("• Scarlet Snatch", NamedTextColor.DARK_RED),
+                    TextUtil.text("• Critical Fire", NamedTextColor.GOLD),
+                    TextUtil.text("• Glory Kill", NamedTextColor.GOLD)
             ),
             null,
             10,
@@ -112,9 +110,13 @@ public enum CustomItem {
             "Scarlet Mace",
             NamedTextColor.RED,
             List.of(
-                    TextUtil.text("Smash everyone and everything!"),
-                    TextUtil.text("• Ruptures target's armor", NamedTextColor.DARK_RED),
-                    TextUtil.text("• Deals Wither II for 3 seconds", NamedTextColor.DARK_RED)
+                    TextUtil.empty(),
+                    TextUtil.text("This mace can rupture anyones armor."),
+                    TextUtil.text("So use it wisely."),
+                    TextUtil.empty(),
+                    TextUtil.text("Abilities:"),
+                    TextUtil.text("• Scarlet Drain", NamedTextColor.DARK_RED),
+                    TextUtil.text("• Scarlet Launch", NamedTextColor.DARK_RED)
             ),
             20
     ),
@@ -125,8 +127,12 @@ public enum CustomItem {
             "Scarlet Pickaxe",
             NamedTextColor.RED,
             List.of(
-                    TextUtil.text("Break the barrier!"),
-                    TextUtil.text("• Can break normally unbreakable blocks", NamedTextColor.DARK_RED)
+                    TextUtil.empty(),
+                    TextUtil.text("This pickaxe can break normally unbreakable blocks."),
+                    TextUtil.text("There's no catch for this one."),
+                    TextUtil.empty(),
+                    TextUtil.text("Abilities:"),
+                    TextUtil.text("• Scarlet Haste", NamedTextColor.DARK_RED)
             ),
             5 * 60
     );

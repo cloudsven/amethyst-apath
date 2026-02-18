@@ -22,7 +22,6 @@ public final class RecipeManager {
         registerAmiriteCrossbow(plugin);
         registerAmiriteCleaver(plugin);
         registerAmiriteShield(plugin);
-        registerShardedTNT(plugin);
         registerScarletHeart(plugin);
         registerScarletMace(plugin);
         registerScarletPickaxe(plugin);
@@ -156,21 +155,6 @@ public final class RecipeManager {
                 },
                 'A', ItemFactory.create(CustomItem.AMIRITE_SHARD),
                 'B', Material.BLAZE_ROD
-        );
-    }
-
-    private static void registerShardedTNT(JavaPlugin plugin) {
-        shaped(
-                plugin,
-                CustomItem.SHARDED_TNT,
-                1,
-                new String[]{
-                        " A ",
-                        "ATA",
-                        " A "
-                },
-                'A', ItemFactory.create(CustomItem.AMIRITE_SHARD),
-                'T', Material.TNT
         );
     }
 

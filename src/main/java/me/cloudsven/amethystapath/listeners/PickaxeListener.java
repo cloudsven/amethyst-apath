@@ -7,6 +7,7 @@ import me.cloudsven.amethystapath.util.CooldownUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -54,13 +55,15 @@ public class PickaxeListener implements Listener {
             String abilityKey = "scarlet_pickaxe_haste";
 
             if (CooldownUtil.isOnCooldown(player.getUniqueId(), abilityKey)) {
-                long secondsLeft = CooldownUtil.getRemainingTime(player.getUniqueId(), abilityKey);
-                player.sendMessage(ChatColor.RED + "Wait " + secondsLeft + "s before using this again!");
+                String warningText = CooldownUtil.getFormattedRemainingTime(player.getUniqueId(), abilityKey);
+                player.sendMessage(ChatColor.RED + "Wait " + warningText + " before using this again!");
                 return;
             }
 
             player.addPotionEffect(new PotionEffect(PotionEffectType.HASTE, 1200, 1));
             player.sendMessage(ChatColor.GOLD + "You feel the rush of the Scarlet Pickaxe!");
+            player.getWorld().playSound(player.getLocation(), Sound.ENTITY_ILLUSIONER_CAST_SPELL, 1.0f, 1.0f);
+            player.getWorld().playSound(player.getLocation(), Sound.BLOCK_AMETHYST_BLOCK_RESONATE, 1.0f, 1.0f);
 
             CooldownUtil.setCooldown(player.getUniqueId(), abilityKey, item.cooldown);
         }
